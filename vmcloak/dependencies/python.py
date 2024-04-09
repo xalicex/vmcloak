@@ -41,19 +41,30 @@ class Python(Dependency):
             "window_name": "Python 3.7.3 (64-bit) Setup",
             "install_path": "C:\\Python3"
         },
+        #{
+        #    "arch": "amd64",
+        #    "version": "3.10.0",
+        #    "target": "win10x64",
+        #    "urls": [
+        #        "https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe",
+        #    ],
+        #    "sha1": "3ee4e92a8ef94c70fb56859503fdc805d217d689",
+        #    "filename": "python-3.10.0-amd64.exe",
+        #    "window_name": "Python 3.10.0 (64-bit) Setup",
+        #    "install_path": "C:\\Python3"
+        #},
         {
             "arch": "amd64",
             "version": "3.10.0",
             "target": "win10x64",
             "urls": [
-                "https://www.python.org/ftp/python/3.10.0/python-3.10.0-amd64.exe",
+                "https://www.python.org/ftp/python/3.10.0/python-3.10.0.exe",
             ],
-            "sha1": "3ee4e92a8ef94c70fb56859503fdc805d217d689",
-            "filename": "python-3.10.0-amd64.exe",
-            "window_name": "Python 3.10.0 (64-bit) Setup",
+            "sha1": "91ee198775bf24ccf4dedfd3e83f7d7ef85a2b9f",
+            "filename": "python-3.10.0.exe",
+            "window_name": "Python 3.10.0 (32-bit) Setup",
             "install_path": "C:\\Python3"
         }
-
     ]
 
     def run(self):
