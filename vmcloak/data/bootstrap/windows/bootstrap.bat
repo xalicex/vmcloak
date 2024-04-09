@@ -31,7 +31,6 @@ echo Setting the resolution.
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "EnableLUA" /t REG_DWORD /d 0 /f
 
 echo Adding agent autorun key. Agent port: %AGENT_PORT%
-#reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v %AGENT_RUNKEY% /t REG_SZ /d "c:\windows\system32\%AGENT_FILE% -host 0.0.0.0 -port %AGENT_PORT%" /f
 schtasks /create /sc ONLOGON /tn mdr /tr "c:\vmcloak\%AGENT_FILE%"  /f /rl HIGHEST 
 
 powershell -ExecutionPolicy bypass -File c:\vmcloak\genericsettings.ps1
