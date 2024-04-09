@@ -25,7 +25,7 @@ confdumps = {}
 
 default_net = IPNet("192.168.30.0/24")
 
-QEMU_AMD64 = ["qemu-system-x86_64", "-monitor", "stdio"]
+QEMU_AMD64 = ["qemu-system-x86_64", "-monitor", "none"]
 
 def _create_image_disk(path, size):
     log.info("Creating disk %s with size %s", path, size)
@@ -58,7 +58,8 @@ def _make_pre_v41_args(attr):
         "-device", "ide-cd,bus=ahci.1,unit=0,drive=cdrom,bootindex=1",
         "-device", "usb-ehci,id=ehci",
         "-device", "usb-tablet,bus=ehci.0",
-        "-soundhw", "hda",
+        "-device", "intel-hda",
+        "-device", "hda-duplex",
         "--enable-kvm"
     ]
 
@@ -82,7 +83,8 @@ def _make_post_v41_args(attr):
         "-device", "ide-cd,bus=ahci.1,unit=0,drive=cdrom,bootindex=1",
         "-device", "usb-ehci,id=ehci",
         "-device", "usb-tablet,bus=ehci.0",
-        "-soundhw", "hda",
+        "-device", "intel-hda",
+        "-device", "hda-duplex",
         "-enable-kvm"
     ]
 
